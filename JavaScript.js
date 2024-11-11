@@ -1,3 +1,7 @@
+
+let humanScore = 0;
+let computerScore = 0;
+
 /* Computer Choice functionality */
 
 function getComputerChoice() {
@@ -23,9 +27,6 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 /* Round Functionality */
 
 function playRound(humanChoice, computerChoice) {
@@ -36,35 +37,32 @@ function playRound(humanChoice, computerChoice) {
     }
 
     // rock beats scissors
-    if (humanChoice === "rock" && computerChoice === "scissor") {
+    if (humanChoice === "rock" && computerChoice === "scissors") {
         console.log("You win! rock beats scissor!");
         humanScore ++
-    } else if (computerChoice === "rock" && humanChoice === "scissor") {
+    } else if (computerChoice === "rock" && humanChoice === "scissors") {
         console.log("You lose! rock beats scissor!");
-        computerScore ++
+        computerScore ++;
     }
 
     // paper beats rock
     if (humanChoice === "paper" && computerChoice === "rock") {
         console.log("You win! paper beats rock!");
-        humanScore ++
+        humanScore ++;
     } else if (computerChoice === "paper" && humanChoice === "rock") {
         console.log("You lose! paper beats rock!");
-        computerScore ++
+        computerScore ++;
     }
 
     // scissors beats paper
     if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("You win! scissors beats paper!");
-        humanScore ++
+        humanScore ++;
     } else if (computerChoice === "scissors" && humanChoice === "paper") {
         console.log("You lose! scissors beats paper!");
-        computerScore ++
+        computerScore ++;
     }
 }
-
-
-
 
 function playGame() {
 for (let i = 0; i < 5; i++) {
@@ -72,6 +70,14 @@ for (let i = 0; i < 5; i++) {
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
 }
+    if (humanScore > computerScore) {
+        console.log(`CONGRATULATIONS!!! You have won ${humanScore} rounds out of 5`);
+    } else{
+        console.log(`You have lost.. The computer won ${computerScore} rounds out of 5`);
+    }
+
 }
+playGame();
+
 
 
