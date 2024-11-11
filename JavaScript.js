@@ -3,6 +3,7 @@
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     let computerChoice;
+
     if (randomNumber === 0) {
         computerChoice = "rock";
     } else if (randomNumber === 1) {
@@ -13,22 +14,33 @@ function getComputerChoice() {
     console.log(`Computer chooses ${computerChoice}`);
     return computerChoice;
 }
+getComputerChoice();
+
 /* Human Choice Functionality */
 
 function getHumanChoice(HumanChoice) {
-    const playerChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
-    console.log(`Player chooses ${playerChoice}`);
-    return playerChoice;
+    const humanChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
+    console.log(`Player chooses ${humanChoice}`);
+    return humanChoice;
 }
-const humanScore = 0
-const computerScore = 0
+getHumanChoice();
+
+/* Round Functionality */
 
 function playRound(humanChoice, computerChoice) {
 
+    // if player and computer pick the same choice
+    if (computerChoice === humanChoice) {
+        console.log("Draw! Play again!");
+    }
+
+    // rock beats scissors
+    // paper beats rock
+    // scissors beats paper
 }
+playRound();
 
 
-const humanSelection = getComputerChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+let humanScore = 0;
+let computerScore = 0;
