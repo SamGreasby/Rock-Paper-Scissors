@@ -73,6 +73,7 @@ for (let i = 0; i < 5; i++) {
     playRound(humanSelection, computerSelection);
     if (i < 5) {
         console.log(`ROUND ${i + 1} The Current Score is - Human has ${humanScore} points and the Computer has ${computerScore} points`)
+        console.log ("")
     }
 }
     if (humanScore > computerScore) {
