@@ -1,6 +1,5 @@
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 /* Computer Choice functionality */
 
@@ -26,6 +25,9 @@ function getHumanChoice() {
     console.log(`Player chooses ${humanChoice}`);
     return humanChoice;
 }
+
+let humanScore = 0;
+let computerScore = 0;
 
 /* Round Functionality */
 
@@ -69,11 +71,16 @@ for (let i = 0; i < 5; i++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
+    if (i < 5) {
+        console.log(`ROUND ${i + 1} The Current Score is - Human has ${humanScore} points and the Computer has ${computerScore} points`)
+    }
 }
     if (humanScore > computerScore) {
         console.log(`CONGRATULATIONS!!! You have won ${humanScore} rounds out of 5`);
-    } else{
+    } else if (computerScore > humanScore) {
         console.log(`You have lost.. The computer won ${computerScore} rounds out of 5`);
+    } else {
+        console.log(`The game has ended in a draw. Final Score is - Human has ${humanScore} points out of 5 and the Computer has ${computerScore} points out of 5`);
     }
 
 }
